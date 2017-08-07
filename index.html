@@ -15,8 +15,7 @@
 
 <div id="panel" style="width: 100%; padding: 30px; background-color: rgba(100,100,0,.7); color: white"></div>
 	
-	<marquee behavior="scroll" direction="left" scrollamount="22">There are <span id="numLetters">5</span> letters in your word.
-		</marquee>
+	<marquee behavior="scroll" direction="left" scrollamount="22">Try not to lose your head... or an arm... or a leg for that matter!</marquee>
 
 		<!-- <div id="keyboard" style="background-color: rgba(0,0,0,.8);padding:40px;border-radius: 16px">
 			<div>
@@ -61,7 +60,7 @@
 <script type="text/javascript">
 
 window.onload = function() {
-$(document).ready(function() {
+// $(document).ready(function() {
 
 
 //Choose a random word from the array below.
@@ -77,57 +76,67 @@ var words = [
 
 var word = words [Math.floor(Math.random() * words.length)];
 
-//Set up the answer
+// //Set up the answer
 
 var answerArray = [];
-var panelWrite = document.getElementById("panel");
 
-// Establishing that the number of letters shown by underscores will
-// equal the number of letters of the random word.
-// The answer array will use [i] || the number of characters in the word
-// and display the characters to be guessed with underscores.
+// // Establishing that the number of letters shown by underscores will
+// // equal the number of letters of the random word.
+// // The answer array will use [i] || the number of characters in the word
+// // and display the characters to be guessed with underscores.
 
-	for (var i = 0; i < word.length; i++) {
+	for (var i = 0; i < word.length; i++){
 		answerArray[i] = "_";
-}
-
-// The game loop begins here, but we first need to keep track of 
-// the remaining letters that need to be solved.
-
-var remainingLetters = word.length;
-
-	while (remainingLetters > 0) {
-
-	panelWrite.innerHTML = answerArray.join(" ");
-}
-	// Show the progress of the player at this point in the code.
-	// Create a variable that prompts the user to guess a letter
-
-// var write = document.getElementById("panel");
-
-var guess = prompt("Time to guess a letter. Good luck!");
-
-		for (var j = 0; j < word.length; j++) {
-			
-			if (word[j] === guess) {
-
-				answerArray[j] = guess;
-
-				remainingLetters--;
-			
-		}
 	}
 
+// // The game loop begins here, but we first need to keep track of 
+// // the remaining letters that need to be solved.
 
-	// The game ends here. Close the loop and 
+	var remainingLetters = word.length;
+
+		while (remainingLetters > 0) {
+
+// 	// Show the progress of the player at this point in the code.
+
+	// var test = document.getElementById("panel");
+	// 	test.innerHTML = answerArray.join(" ");
+
+// 	// Create a variable that prompts the user to guess a letter
+
+	var guess = prompt("Time to guess a letter. Good luck!");
+
+		var test = document.getElementById("panel");
+		test.innerHTML = answerArray.join(" ");
 
 
-});
+		if(guess === null) {
 
-panelWrite.innerHTML = answerArray.join(" ");
-alert("Congratulations! You figured out the magic word.");
+			break;
 
+		} else if (guess.length !== 1) {
+
+				alert("Whoops! It looks like you may have incorrectly hit the keys on your keyboard. Try again.");
+			
+			} else {
+
+				for (var j = 0; j < word.length; j++) {
+			
+ 					if (word[j] === guess) {
+
+ 						answerArray[j] = guess;
+
+						remainingLetters--;
+			}
+		}
+	}
 }
+
+// 	// The game ends here. Close the loop and 
+
+	test.innerHTML = answerArray.join(" ");
+	alert("Congratulations! You figured out the magic word.");
+
+};
 
 </script>
 	
