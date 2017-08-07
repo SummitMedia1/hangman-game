@@ -1,0 +1,63 @@
+
+@import url('https://fonts.googleapis.com/css?family=Julee|Luckiest+Guy');
+
+* {
+	box-sizing: border-box;
+}
+
+
+body, p, marquee {
+	background-image: url('beetlejuice.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: Julee;
+	font-size: 40px;
+	color: white;
+
+}
+
+h1 {
+
+	font-family: Luckiest Guy;
+	font-size: 50px;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+
+
+
+#header {
+	width: 70%;
+	border: 5px solid #dddddd;
+	border-radius: 15px;
+	padding: 20px;
+	text-align: center;
+	margin: 5% auto;
+	color: darkslategray;
+	background-color: rgba(102, 134, 192, .5);
+}
+
+#keyboard input {
+width: 65px;
+height: auto;
+padding: 10px;
+margin: 5px;
+background-color: rgba(0,0,0,.9);
+color: white;
+line-height: 3.0em;
+border: 2px solid rgba(100,100,0,.7);
+border-radius: 10px;
+display: inline-block;
+cursor: pointer;
+}
+
+#keyboard input:hover {
+	background-color: lightblue;
+}
