@@ -89,9 +89,9 @@ function checkLetters(letter){
 
 		// Check where the letter in the word exists, and then populate the blanksAndSuccesses arry.
 		if(isLetterInWord) {
-			for (var i = 0; i < numBlanks; i++){
-				if(selectedWord[i] === letter){
-					blanksAndSuccesses[i] = letter;
+			for (var j = 0; j < numBlanks; j++){
+				if(selectedWord[j] === letter){
+					blanksAndSuccesses[j] = letter;
 					guessesLeft--;
 			}
 		}
@@ -115,18 +115,18 @@ function gameComplete(){
 	document.getElementById('wrongGuessBlanks').innerHTML = wrongLetters.join(" ");
 
 	// Check if player won or lost game
-	if (lettersInWord.toString() === blanksAndSuccesses.toString()){
-		setInterval(function(){ alert("Good Job Hotshot! You Won The Game"); }, 1000);
+	if (lettersInWord.join("") === blanksAndSuccesses.join("")){
 		winCounter++;
+		alert("Good Job Hotshot! You Won The Game!");
 		// Update win counter in HTML
 		document.getElementById("winCount").innerHTML = winCounter;
 		startGame();
 	}
 
 	else if (guessesLeft === 0){
+		lossCounter++;
 		alert("You Lost The Game. Now Say Beetlejuice Three Times Fast!");
 		// Update loss counter in HTML
-		lossCounter++;
 		document.getElementById("lossCount").innerHTML = lossCounter;
 		startGame();
 	}
