@@ -26,21 +26,43 @@
   </div> -->
 <!-- Diagram Close *****************************************************************************-->
 <div class="container" id="main-container-for-words" style="margin-top: 40px">
-    <div class="col-sm-5" style="background-color: rgba(20,0,40,.65); padding: 40px; border: 8px dotted rgba(180,180,0,1)">
-      <h2>Word To Guess</h3>
-      <h2 id="wordBlanks">_</h2>
-    </div>
 
-    <div class="col-sm-3 col-sm-offset-1" style="background-color: rgba(20,0,40,.65); padding: 40px; border: 8px dotted rgba(180,180,0,1)">
-      <h2 align="center">Guesses Left</h2><div align="center" id="numGuesses">0</div>
-      <h2 align="center">Wrong Guesses</h3>
-      <h2 id="wrongGuessBlanks">_ _ _ _ _ _ _ _ _ _ _ _</h2>
-    </div>
+    <div class="col-sm-6" style="background-color: rgba(20,0,40,.65); padding: 40px; border: 8px dotted rgba(180,180,0,1)">
+      <h1 align="center" style="padding: 0; margin-top: 0">Word To Guess</h1>
+      <h2 id="wordBlanks" style="padding: 0; margin-top: 0">_ _ _ _ _</h2>
 
-    <div class="col-sm-2 col-sm-offset-1" style="background-color: rgba(20,0,40,.65); padding: 40px; border: 8px dotted rgba(180,180,0,1)">
-      <h2 align="center" style="color: lime">Wins</h2><div align="center" id="winCount">0</div>
-      <h2 align="center" style="color: red">Losses</h2><div align="center" id="lossCount">0</div>
-    </div>
+      <div class="row"></div>
+
+      <div class="col-sm-12" style="padding: 0">
+        <div class="col-sm-6" style="padding: 0">
+          <h2 align="right" style="color: yellow">Guesses Left:</h2>
+        </div>
+        <div class="col-sm-6" style="padding: 0">
+          <div align="center" id="numGuesses" style="color: yellow">0</div>
+        </div>
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col-sm-12">
+        <div class="col-sm-5">
+          <h3 align="left">Wrong Guesses:</h3>
+        </div>
+        <div class="col-sm-7">
+          <h3 align="right" id="wrongGuessBlanks">_ _ _ _ _ _ _ _ _ _ _ _</h3>
+        </div>
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col-sm-12">
+        <div class="col-sm-6">
+          <h2 align="center" style="color: lime">Wins</h2><div align="center" id="winCount">0</div>
+        </div>
+        <div class="col-sm-6">
+          <h2 align="center" style="color: red">Losses</h2><div align="center" id="lossCount">0</div>
+        </div>
+      </div>
 
 </div>
 </div>
