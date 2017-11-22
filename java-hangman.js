@@ -19,15 +19,28 @@ var words = [
 	"goodfellas",
 	"fender",
 	"summit",
-	"advertising"
+	"advertising",
+	"photography",
+	"florida",
+	"lobster",
+	"reagan",
+	"media",
+	"redskins",
+	"orioles",
+	"capitals",
+	"godfather",
+	"fedora",
+	"balvenie",
+	"creativity",
+	"movies"
 ];
 
 var selectedWord = "";
 var lettersInWord = [];
-var numBlanks = 0;
+var numBlanks = "";
 var blanksAndSuccesses = [];
 var wrongLetters = [];
-var guessedLetters = "";
+var guessedLetters = [];
 
 // Counters ====================================================================
 
@@ -44,6 +57,10 @@ function startGame(){
 	numBlanks = lettersInWord.length;
 
 	// Reset variables with each start of a new GAME
+	wrongLetters = [];
+	guessedLetters = [];
+	blanksAndSuccesses = [];
+	lettersInWord = [];
 	if (lettersInWord.length < 6){
 		guessesLeft = 10
 	} else if (lettersInWord.length < 8){
@@ -51,10 +68,6 @@ function startGame(){
 	} else {
 		guessesLeft = 14
 	}
-	wrongLetters = [];
-	guessedLetters = "";
-	blanksAndSuccesses = [];
-	lettersInWord = [];
 
 
 	// Populate the number of characters in the word with blanks =================
@@ -107,7 +120,7 @@ function checkLetters(letter){
 		// console.log(blanksAndSuccesses);
 }
 
-function gameComplete(){
+function endGame(){
 	// console.log("Win Count " + winCounter + " | Loss Count " + lossCounter + " | Guesses Left " + guessesLeft);
 
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
@@ -115,7 +128,7 @@ function gameComplete(){
 	document.getElementById('wrongGuessBlanks').innerHTML = wrongLetters.join(" ");
 
 	// Check if player won or lost game
-	if (lettersInWord.join("") === blanksAndSuccesses.join("")){
+	if (blanksAndSuccesses.join("") === selectedWord.toString()){
 		winCounter++;
 		alert("Good Job Hotshot! You Won The Game!");
 		// Update win counter in HTML
@@ -141,7 +154,7 @@ startGame();
 document.onkeyup = function(event) {
 	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 	checkLetters(letterGuessed);
-	gameComplete();
+	endGame();
 
 // Testing / Debugging =========================================================
 	// console.log(letterGuessed);
