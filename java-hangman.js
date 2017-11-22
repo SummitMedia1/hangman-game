@@ -57,17 +57,18 @@ function startGame(){
 	numBlanks = lettersInWord.length;
 
 	// Reset variables with each start of a new GAME
+	if (lettersInWord.length < 6){
+		guessesLeft = 10
+	} else if (lettersInWord.length < 8){
+		guessesLeft = 13
+	} else {
+		guessesLeft = 15
+	}
 	wrongLetters = [];
 	guessedLetters = [];
 	blanksAndSuccesses = [];
 	lettersInWord = [];
-	if (lettersInWord.length < 6){
-		guessesLeft = 10
-	} else if (lettersInWord.length < 8){
-		guessesLeft = 12
-	} else {
-		guessesLeft = 14
-	}
+
 
 
 	// Populate the number of characters in the word with blanks =================
@@ -129,16 +130,17 @@ function endGame(){
 
 	// Check if player won or lost game
 	if (blanksAndSuccesses.join("") === selectedWord.toString()){
-		winCounter++;
 		alert("Good Job Hotshot! You Won The Game!");
+		winCounter++;
+
 		// Update win counter in HTML
 		document.getElementById("winCount").innerHTML = winCounter;
 		startGame();
 	}
 
 	else if (guessesLeft === 0){
-		lossCounter++;
 		alert("You Lost The Game. Now Say Beetlejuice Three Times Fast!");
+		lossCounter++;
 		// Update loss counter in HTML
 		document.getElementById("lossCount").innerHTML = lossCounter;
 		startGame();
