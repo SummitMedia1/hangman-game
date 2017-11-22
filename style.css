@@ -109,8 +109,35 @@ input:hover[type="button"] {
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
+@media only screen and (max-width : 768px) {
+
 	h1 {
-		font-size: 40px;
+		font-size: 38px;
+		padding: 20px;
+		line-height: 1.55em;
+	}
+
+	#bhead
+
+	 {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		margin-top: 0 !important;
+		width:100% !important;
+		float: left;
+		clear: both;
+	}
+
+	#bbody {
+		display: none;
+	}
+
+	#illustration {
+		width: 100%;
+		margin-top: 40px;
+		background-color: rgba(20,0,40,.65);
+		border-radius: 100%;
+		border: 8px dotted rgba(180,180,0,1);
+		padding: 0;
 	}
 }
