@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Julee|Luckiest+Guy');
 
 * {
@@ -21,10 +20,11 @@ body {
 }
 
 #illustration {
-	width: 35%;
+	width: 40%;
 	background-color: rgba(20,0,40,.65);
-	border-radius: 20px;
-	border: 6px dotted rgba(180,180,0,1);
+	border-radius: 100%;
+	border: 8px dotted rgba(180,180,0,1);
+	padding: 0;
 }
 
 p, marquee {
