@@ -16,18 +16,15 @@ body {
 	background-image: url('beetlejuice.jpeg');
 	background-size: cover;
 	background-repeat: no-repeat;
+	opacity: 1.0;
+	position: relative;
 }
 
 #illustration {
-	width: 250px;
-	height: 350px;
-	padding: 15px;
+	width: 35%;
 	background-color: rgba(20,0,40,.65);
-	border-radius: 14px;
-	border: 5px solid #ffffff;
-	display: inline-block;
-	margin-top: 20px;
-
+	border-radius: 20px;
+	border: 6px dotted rgba(180,180,0,1);
 }
 
 p, marquee {
@@ -41,78 +38,75 @@ h1 {
 	font-size: 50px;
 }
 
+h2 {
+
+	font-family: Julee;
+	font-size: 30px;
+}
+
+h3 {
+
+	font-family: Julee;
+	font-size: 22px;
+}
+
+#wordBlanks {
+	font-size: 50px;
+	text-align: center;
+	padding: 0;
+}
+
+#wrongGuessBlanks {
+	font-size: 22px;
+	text-align: center;
+	padding: 0;
+}
+
+
 .blink_me {
   animation: blinker 1s linear infinite;
 }
 
-@keyframes blinker {  
+@keyframes blinker {
   50% { opacity: 0; }
 }
 
-
-
-
-#header {
-	width: 70%;
-	border: 5px solid #dddddd;
-	border-radius: 15px;
-	padding: 20px;
-	text-align: center;
-	margin: 2% auto;
-	color: darkslategray;
-	background-color: rgba(102, 134, 192, .5);
-}
-
-#keyboard input {
-width: 65px;
-height: auto;
-padding: 10px;
-margin: 5px;
-background-color: rgba(0,0,0,.9);
-color: white;
-line-height: 3.0em;
-border: 2px solid rgba(100,100,0,.7);
-border-radius: 10px;
-display: inline-block;
-cursor: pointer;
-}
-
-#keyboard input:hover {
-	background-color: lightblue;
-}
-
-/* safari and chrome */
 @-webkit-keyframes wiggle {
 	0% {-webkit-transform:rotate(4deg);}
 	50% {-webkit-transform:rotate(-4deg);}
 	100% {-webkit-transform:rotate(4deg);}
 }
- 
+
 /* firefox */
 @-moz-keyframes wiggle {
 	0% {-moz-transform:rotate(4deg);}
 	50% {-moz-transform:rotate(-4deg);}
 	100% {-moz-transform:rotate(4deg);}
 }
- 
+
 /* anyone brave enough to implement the ideal method */
 @keyframes wiggle {
 	0% {transform:rotate(4deg);}
 	50% {transform:rotate(-4deg);}
 	100% {transform:rotate(4deg);}
 }
- 
+
 .wiggler {
 	-webkit-animation: wiggle 0.5s infinite;
 	-moz-animation: wiggle 0.5s infinite;
 	animation: wiggle 0.5s infinite;
 }
 
+input[type="button"] {
+	background-color: #AEB6BF;
+	font-size: 15px;
+	height: 30px;
+	width: 30px;
+}
 
-
-
-
-
+input:hover[type="button"] {
+	background-color: #5D6D7E;
+}
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
@@ -120,5 +114,3 @@ cursor: pointer;
 		font-size: 40px;
 	}
 }
-
-
